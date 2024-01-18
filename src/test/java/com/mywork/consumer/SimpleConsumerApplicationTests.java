@@ -1,10 +1,10 @@
-package com.mywork.ataleoffirstapp;
+package com.mywork.consumer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ATaleOfFirstAppApplicationTests {
+class SimpleConsumerApplicationTests {
 
 	@Test
 	void contextLoads() {

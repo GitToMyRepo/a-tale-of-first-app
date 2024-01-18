@@ -1,13 +1,13 @@
-package com.mywork.ataleoffirstapp;
+package com.mywork.consumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ATaleOfFirstAppApplication {
+public class SimpleConsumerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ATaleOfFirstAppApplication.class, args);
+		SpringApplication.run(SimpleConsumerApplication.class, args);
 	}
 
 }
