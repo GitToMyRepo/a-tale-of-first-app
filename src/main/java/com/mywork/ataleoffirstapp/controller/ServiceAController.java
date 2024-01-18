@@ -15,13 +15,19 @@ public class ServiceAController {
     @Value("${second.service.port}")
     private int secondServicePort;
 
+    @Value("${second.service.domain}")
+    private String secondServiceDomain;
+
     public ServiceAController(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
     @GetMapping("/call-service-b")
     public String callServiceB() {
-        String serviceBResponse = restTemplate.getForObject("http://localhost:"+secondServicePort+"/"+secondServiceContext+"/service-b", String.class);
+        StringBuilder endpointURL = new StringBuilder();
+        endpointURL.append("http://").append(this.secondServiceDomain).append(":").append(this.secondServicePort).append("/").append(secondServiceContext).append("/service-b");
+        System.out.println("Invoking " + endpointURL);
+        String serviceBResponse = restTemplate.getForObject(endpointURL.toString(), String.class);
         return "Response from Service B: " + serviceBResponse;
     }
 }
